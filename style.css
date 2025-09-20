@@ -8,20 +8,23 @@
 html, body { height: 100%; margin: 0; }
 
 body {
-  display: grid;
-  place-items: center;
+  margin: 0;
+  height: 100vh;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   line-height: 1.5;
   text-align: center;
-  padding: 20px;
 
   /* ✨ صورة hero */
   background: url('hero.jpg') center/cover no-repeat;
   position: relative;
   color: var(--fg);
+
+  /* ✨ Centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* ✨ overlay فوق الصورة */
 body::before {
   content: "";
   position: absolute;
@@ -33,6 +36,8 @@ body::before {
 main {
   position: relative;
   z-index: 1;
+  max-width: 600px; /* عشان المحتوى ما يبقاش عريض قوي */
+  padding: 20px;
 }
 
 h1 {
@@ -100,3 +105,4 @@ h1 {
   color: var(--muted);
   opacity: .9;
 }
+
