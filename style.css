@@ -4,24 +4,24 @@
   --muted:#9ca3af; 
   --accent:#7c3aed; 
 }
-* { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
 
+/* Body with background + flex center */
 body {
-  display: grid;
-  place-items: center;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   line-height: 1.5;
+  color: var(--fg);
   text-align: center;
-  padding: 20px;
 
-  /* ✨ صورة hero */
   background: url('hero.jpg') center/cover no-repeat;
   position: relative;
-  color: var(--fg);
+
+  display: flex;
+  align-items: center;   /* عمودي */
+  justify-content: center; /* أفقي */
 }
 
-/* ✨ overlay فوق الصورة */
 body::before {
   content: "";
   position: absolute;
@@ -33,12 +33,16 @@ body::before {
 main {
   position: relative;
   z-index: 1;
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
 }
 
+/* Headings */
 h1 {
   font-size: clamp(42px, 6vw, 64px);
   letter-spacing: 0.02em;
-  margin: 0 0 10px 0;
+  margin-bottom: 10px;
   font-weight: 800;
   background: linear-gradient(90deg, var(--fg), #c8c8ff, var(--fg));
   -webkit-background-clip: text;
@@ -50,6 +54,8 @@ h1 {
   color: var(--muted);
   margin-bottom: 28px;
 }
+
+/* Email pill */
 .pill {
   display: inline-flex;
   align-items: center;
@@ -94,6 +100,7 @@ h1 {
   fill: currentColor;
 }
 
+/* Footer */
 .footer {
   margin-top: 10px;
   font-size: 13px;
